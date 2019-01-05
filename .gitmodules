@@ -1,0 +1,6 @@
+[submodule "plugins/kong-rbac"]
+	path = plugins/kong-rbac
+	url = https://github.com/hadimazalan/kong-rbac.git
+[submodule "plugins/kong-response-size-limiting"]
+	path = plugins/kong-response-size-limiting
+	url = https://github.com/hadimazalan/kong-response-size-limiting

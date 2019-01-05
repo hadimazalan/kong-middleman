@@ -9,7 +9,9 @@ RUN yum install git -y \
     && cd /usr/local/kong/plugins/middleman \
     && /usr/local/bin/luarocks make *.rockspec make *.rockspec \
     && cd /usr/local/kong/plugins/kong-plugin-jwt-claims-headers \
+    && /usr/local/bin/luarocks make *.rockspec make *.rockspec \
+    && cd /usr/local/kong/plugins/kong-response-size-limiting \
     && /usr/local/bin/luarocks make *.rockspec make *.rockspec 
 
 #  add bundled & middleman plugins
-ENV KONG_PLUGINS "bundled,middleman,jwt-claims-headers"
+ENV KONG_PLUGINS "bundled,middleman,jwt-claims-headers,kong-response-size-limiting"
