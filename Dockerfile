@@ -1,5 +1,5 @@
 FROM kong:0.14.1-centos
-LABEL maintainer="Javier Moure"
+LABEL maintainer="Hadi Mazalan"
 
 RUN mkdir -p /usr/local/kong/plugins
 COPY plugins /usr/local/kong/plugins
@@ -9,4 +9,5 @@ RUN yum install git -y \
     && cd /usr/local/kong/plugins/middleman \
     && /usr/local/bin/luarocks make *.rockspec make *.rockspec
 
-ENV KONG_CUSTOM_PLUGINS middleman
+#  add bundled & middleman plugins
+ENV KONG_PLUGINS "bundled,middleman"
