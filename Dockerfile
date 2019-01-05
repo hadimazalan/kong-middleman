@@ -7,7 +7,9 @@ RUN yum install git -y \
     && yum install zip -y \
     && yum install vim -y \
     && cd /usr/local/kong/plugins/middleman \
-    && /usr/local/bin/luarocks make *.rockspec make *.rockspec
+    && /usr/local/bin/luarocks make *.rockspec make *.rockspec \
+    && cd /usr/local/kong/plugins/kong-plugin-jwt-claims-headers \
+    && /usr/local/bin/luarocks make *.rockspec make *.rockspec 
 
 #  add bundled & middleman plugins
-ENV KONG_PLUGINS "bundled,middleman"
+ENV KONG_PLUGINS "bundled,middleman,jwt-claims-headers"
